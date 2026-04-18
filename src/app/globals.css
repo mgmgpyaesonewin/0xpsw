@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #e0e0e0;
+  --green: #00ff41;
+  --green-dim: #00cc33;
+  --cyan: #00d9ff;
+  --red: #ff3e3e;
+  --yellow: #ffcc00;
+  --muted: #666666;
+  --border: #1a1a2e;
+  --card: #111111;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-green: var(--green);
+  --color-green-dim: var(--green-dim);
+  --color-cyan: var(--cyan);
+  --color-red: var(--red);
+  --color-yellow: var(--yellow);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-mono), "Fira Code", "JetBrains Mono", monospace;
+}
+
+::selection {
+  background: var(--green);
+  color: var(--background);
+}
+
+/* Scanline effect */
+.scanlines::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 50;
+}
+
+/* Terminal cursor blink */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Boot sequence fade-in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.boot-line {
+  animation: fadeIn 0.3s ease-out forwards;
+  opacity: 0;
+}
+
+/* Glow effect for terminal text */
+.text-glow {
+  text-shadow: 0 0 8px rgba(0, 255, 65, 0.4);
+}
+
+/* Link hover effect */
+a.terminal-link {
+  transition: color 0.15s ease, text-shadow 0.15s ease;
+}
+
+a.terminal-link:hover {
+  color: var(--green);
+  text-shadow: 0 0 8px rgba(0, 255, 65, 0.3);
+}
