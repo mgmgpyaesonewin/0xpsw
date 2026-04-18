@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 0xPSW_
 
-## Getting Started
+> I spent 9 years learning how to build software. Now I'm learning how to break it.
 
-First, run the development server:
+Personal portfolio & offensive security knowledge base. Full-Stack Developer turned Penetration Tester — CTF write-ups, bug bounty research, and OSCP methodology notes.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## What's Inside
+
+```
+/writeups      → HTB & THM boxes with full attack chains
+/bug-bounty    → Real-world research on Luno, Bitso, Under Armour
+/methodology   → PEN-200 / OSCP prep — recon through AD lateral movement
+/about         → The journey from dev to pentester
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Stats
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Platform | Metric |
+|----------|--------|
+| TryHackMe | Top 4% · 127 rooms · 19 badges · Sapphire league |
+| HackTheBox | 2 boxes pwned |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tech Stack
 
-## Learn More
+- **Framework** — Next.js 16 + React 19 + TypeScript
+- **Styling** — Tailwind CSS v4 with a custom CRT/terminal theme
+- **Font** — Geist Mono
+- **Hosting** — Vercel
 
-To learn more about Next.js, take a look at the following resources:
+## Development
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm install
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Content and write-ups are personal notes. Code is MIT.
