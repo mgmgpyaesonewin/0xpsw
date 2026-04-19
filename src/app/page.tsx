@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { BootSequence } from "@/components/boot-sequence";
 import { StatCard } from "@/components/stat-card";
@@ -20,29 +21,67 @@ export default function Home() {
       {bootComplete && (
         <div className="space-y-16 boot-line" style={{ animationDelay: "0ms" }}>
           {/* Hero */}
-          <section>
-            <h1 className="text-4xl font-bold text-green text-glow mb-4">
-              0xPSW<span className="cursor-blink">_</span>
-            </h1>
-            <p className="text-lg text-foreground leading-relaxed max-w-2xl">
-              I spent 9 years learning how to build software.
-              <br />
-              <span className="text-green">
-                Now I&apos;m learning how to break it.
-              </span>
-            </p>
-            <p className="text-sm text-muted mt-4 max-w-2xl">
-              Full-Stack Developer turned Penetration Tester. I write about
-              offensive security, publish CTF write-ups, and document bug bounty
-              methodology — understanding how attacks work to build better
-              defences.
-            </p>
+          <section className="relative overflow-hidden rounded-[28px] border border-border/80 bg-card/85 px-6 py-8 md:px-10 md:py-10">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,255,65,0.14),transparent_34%),radial-gradient(circle_at_bottom_left,rgba(0,217,255,0.10),transparent_32%),linear-gradient(140deg,rgba(17,17,17,0.98),rgba(10,10,10,0.94))]" />
+            <div className="absolute -right-12 top-1/2 hidden h-80 w-80 -translate-y-1/2 opacity-12 md:block">
+              <Image
+                src="/images/avatar-02.png"
+                alt="0xPSW avatar illustration"
+                fill
+                sizes="320px"
+                className="object-contain blur-[1px]"
+              />
+            </div>
+
+            <div className="relative grid gap-10 md:grid-cols-[minmax(0,1fr)_300px] md:items-center">
+              <div>
+                <p className="mb-4 text-[11px] uppercase tracking-[0.32em] text-cyan">
+                  {"// operator profile"}
+                </p>
+                <h1 className="mb-4 text-4xl font-bold text-green text-glow md:text-5xl">
+                  0xPSW<span className="cursor-blink">_</span>
+                </h1>
+                <p className="max-w-2xl text-lg leading-relaxed text-foreground">
+                  I spent 9 years learning how to build software.
+                  <br />
+                  <span className="text-green">
+                    Now I&apos;m learning how to break it.
+                  </span>
+                </p>
+                <p className="mt-4 max-w-2xl text-sm text-muted">
+                  Full-Stack Developer turned Penetration Tester. I write about
+                  offensive security, publish CTF write-ups, and document bug
+                  bounty methodology — understanding how attacks work to build
+                  better defences.
+                </p>
+              </div>
+
+              <div className="relative mx-auto w-full max-w-[300px]">
+                <div className="absolute inset-8 rounded-full bg-green/15 blur-3xl" />
+                <div className="relative rounded-[24px] border border-green/25 bg-[#09091b]/92 p-3 shadow-[0_0_40px_rgba(0,255,65,0.08)]">
+                  <div className="mb-3 flex items-center justify-between text-[10px] uppercase tracking-[0.28em] text-muted">
+                    <span>identity</span>
+                    <span>online</span>
+                  </div>
+                  <div className="relative aspect-square overflow-hidden rounded-[18px] border border-border bg-[#070713]">
+                    <Image
+                      src="/images/avatar-02.png"
+                      alt="0xPSW avatar illustration"
+                      fill
+                      priority
+                      sizes="(min-width: 768px) 300px, 80vw"
+                      className="object-cover object-center"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </section>
 
           {/* Stats */}
           <section>
             <h2 className="text-xs text-muted mb-4 uppercase tracking-widest">
-              // stats
+              {"// stats"}
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <StatCard value="2" label="HTB Boxes" />
@@ -55,7 +94,7 @@ export default function Home() {
           {/* Sections */}
           <section>
             <h2 className="text-xs text-muted mb-6 uppercase tracking-widest">
-              // navigate
+              {"// navigate"}
             </h2>
             <div className="grid md:grid-cols-2 gap-4">
               <SectionCard
@@ -88,7 +127,7 @@ export default function Home() {
           {/* Recent Write-ups */}
           <section>
             <h2 className="text-xs text-muted mb-4 uppercase tracking-widest">
-              // recent write-ups
+              {"// recent write-ups"}
             </h2>
             <div className="space-y-2">
               <WriteupRow
